@@ -124,4 +124,52 @@ console.log(swapWeatherMap);
 const swapWeatherMap2 = new Map([...weatherMap].map(el => el.reverse()));
 console.log(swapWeatherMap2);
 
+//
+// 3.8. WeakMap - слабый мап, который очищается при потере обьекта
+//
+
+let a = { a: 1 };
+let b = { b: 2 };
+const map = new WeakMap();
+map.set(a, 'testA');
+map.set(b, 'testB');
+console.log(map.get(a));
+console.log(map.has(a));
+console.log(map);
+
+a = null;
+setTimeout(() => {
+  console.log(map);
+}, 1000)
+
+// Частое применение - в кеше
+let cache = new WeakMap();
+
+function getValue(obj) {
+    if (!cache.has(obj)) {
+      const res = 2389 + 83429 * 32423; //  Сложные вычисления
+      cache.set(obj, res);
+    }
+    return cache.get(obj);
+}
+
+const res = getValue(b);
+console.log(res);
+const res2 = getValue(b);
+
+//
+// 3.9. WeakSet
+// 
+
+let a = { a: 1 };
+let b = { b: 2 };
+
+const set = new WeakSet([a, b]);
+console.log(set);
+a = null;
+
+setTimeout(() => {
+  console.log(set);
+}, 1000);
+
 */
