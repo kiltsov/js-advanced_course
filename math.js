@@ -60,4 +60,70 @@ console.log(Math.max(...arr));
 
 console.log(Math.random());
 
+//
+// 4.8. Интернационализация чисел
+//
+
+const option1 = {
+	style: 'currency',
+	currency: 'RUB'
+}
+
+const option2 = {
+	style: 'currency',
+	currency: 'USD'
+}
+
+const option3 = {
+	style: 'decimal',
+}
+
+const option4 = {
+	style: 'percent',
+}
+
+const option5 = {
+	style: 'unit',
+	unit: 'celsius'
+}
+
+console.log(new Intl.NumberFormat('ru-RU', option1).format(23000));
+console.log(new Intl.NumberFormat('en-US', option2).format(23000));
+console.log(new Intl.NumberFormat('ru-RU', option3).format(10000));
+console.log(new Intl.NumberFormat('ru-RU', option4).format(0.1));
+console.log(new Intl.NumberFormat('ru-RU', option5).format(25));
+
+//
+// 4.9. Упражнение - Конвертер валют
+//
+
+function convert(sum, initialCurrency, convertCurrency) {
+	const allCurrencies = [
+		{ name: 'USD', mult: 1 },
+		{ name: 'RUB', mult: 1/60 },
+		{ name: 'EUR', mult: 1.1 },
+	];
+	const initial = allCurrencies.find(c => c.name === initialCurrency)
+	if (!initial) {
+		return null;
+	}
+	const convert = allCurrencies.find(c => c.name === convertCurrency)
+	if (!convert) {
+		return null;
+	}
+	return new Intl
+		.NumberFormat('ru-RU', { style: 'currency', currency: convert.name })
+		.format(sum * initial.mult / convert.mult);
+}
+
+console.log(convert(10000, 'RUB', 'USD'));
+console.log(convert(10000, 'RUB', 'EUR'));
+console.log(convert(100, 'USD', 'RUB'));
+console.log(convert(100, 'USD', 'EUR'));
+console.log(convert(100, 'EUR', 'RUB'));
+console.log(convert(100, 'TG', 'RUB'));
+console.log(convert(100, 'EUR', 'TG'));
+
+console.log(isNaN('123abc'))
+
 */

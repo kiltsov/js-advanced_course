@@ -172,4 +172,72 @@ setTimeout(() => {
   console.log(set);
 }, 1000);
 
+//
+// 4.3. Округление
+//
+
+// До целого
+console.log(Math.round(1.4)); // 1
+console.log(Math.round(1.6)); // 1
+console.log(Math.round(1.499999999)); // 1
+
+// До потолка
+console.log(Math.ceil(1.4)); // 2
+console.log(Math.ceil(1)); // 0
+console.log(Math.ceil(0.1)); // 1
+
+// До пола
+console.log(Math.floor(0.1)); // 0
+console.log(Math.floor(2.9)); // 2
+
+// Отсекает кроме целого
+console.log(Math.trunc(2.9)); // 2
+console.log(Math.trunc(1.4)); // 1
+console.log(Math.trunc(1.11111)); // 1
+
+console.log(1.49999.toFixed(1)); // 1.5 - но это строка
+console.log(Number(1.49999.toFixed(1))); // 1.5 - в число
+
+//
+// 4.4. Упражнение - Функция случайного числа
+//
+
+function getRandomNumbers(max, min) {
+	return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+console.log(getRandomNumbers(2, 9));
+
+//
+// 4.5. Оператор остатка от деления
+//
+
+console.log(15 / 2); // Деление
+console.log(15 % 2); // 14 / 2 + 1 = 15
+console.log(12 % 2); // 12 / 2 + 0 = 12
+
+const isEven = n => n % 2 === 0; // Проверка на четное
+const isOdd = n => n % 2 === 0; // Проверка на нечетное
+
+function isEvenFunc(n) {
+	return n % 2 === 0;
+}
+
+console.log(isEven(17)); // false
+console.log(isEven(12)); // true
+console.log(isOdd(17)); // false
+console.log(isOdd(12)); // true
+
+//
+// 4.6. Разделитель чисел
+//
+
+const bigNum = 350_500_000;
+const bigNum2 = 350500000;
+
+console.log(Number('350_000_000')); // NaN
+console.log(Number('350000000')); // 350000000
+console.log(Number.parseInt('350_000_000')); // 350 - неккоректно
+console.log(Number.parseFloat('350_000_000')); // 350 - неккоректно
+
 */
