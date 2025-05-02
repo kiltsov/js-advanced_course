@@ -43,8 +43,6 @@ console.log(first.getTime() == second.getTime());
 console.log(first.getTime() === second.getTime());
 console.log(Number(first) === Number(second));
 
-*/
-
 //
 // 5.4. Упражнение - Проверка на день рождения
 //
@@ -72,3 +70,35 @@ function isBirthday(userObj) {
 
 console.log(isBirthday(user));
 console.log(isBirthday(user2));
+
+//
+// 5.5. Интернационализация дат
+//
+
+const date = new Date();
+console.log(date);
+console.log(new Intl.DateTimeFormat('ru-RU').format(date));
+console.log('------------------------------------------');
+
+const option1 = {
+	hour: 'numeric',
+	minute: 'numeric',
+};
+console.log(new Intl.DateTimeFormat('ru-RU', option1).format(date));
+console.log('------------------------------------------');
+
+const option2 = {
+	hour: 'numeric',
+	minute: 'numeric',
+	month: 'long',
+	weekday: 'short',
+	year: '2-digit'
+}
+console.log(new Intl.DateTimeFormat('ru-RU', option2).format(date));
+console.log(new Intl.DateTimeFormat('en-US', option2).format(date));
+console.log('------------------------------------------');
+
+console.log(navigator.language); // можно использовать заместо ru-RU
+console.log(new Intl.DateTimeFormat(navigator.language, option2).format(date));
+
+*/
