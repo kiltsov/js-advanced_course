@@ -35,8 +35,6 @@ const timer = setTimeout(() => {
 console.log(interval);
 console.log(timer);
 
-*/
-
 //
 // 6.5. Упражнение - Таймер пиццы
 //
@@ -58,3 +56,5 @@ function pizzaTimer(ms) {
 }
 
 pizzaTimer(5000);
+
+*/
