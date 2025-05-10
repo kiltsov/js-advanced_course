@@ -47,8 +47,6 @@ console.log(lordOftheRings.__proto__ === Book.prototype);
 console.log(Book.prototype.isPrototypeOf(lordOftheRings)); // true
 console.log(Book.prototype.isPrototypeOf(Book)); // false
 
-*/
-
 //
 // 7.5. Упражнение - Корзина товаров
 //
@@ -110,3 +108,4 @@ console.log(basket2);
 // 7.6. Цепочки prototype
 //
 
+*/
