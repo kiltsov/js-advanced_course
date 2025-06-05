@@ -129,8 +129,6 @@ class Car {
 	}
 }
 
-*/
-
 //
 // 8.5. Упражнение - класс пользователя
 //
@@ -206,3 +204,5 @@ const user_2 = new UserByAnton('a@a.tu', 'dfhjkha');
 console.log(user_2.checkPassword('234'));
 console.log(user_2.checkPassword('dfhjkha'));
 console.log(user_2.changePassword('dfhjkha', '123'));
+
+*/
