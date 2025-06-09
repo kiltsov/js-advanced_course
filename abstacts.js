@@ -137,8 +137,6 @@ sword.strike(enemy);
 sword.strike(enemy);
 sword.strike(enemy);
 
-*/
-
 //
 // 9.7. Паттерн Builder и chaining
 //
@@ -163,3 +161,5 @@ const res = wallet
     .remove(30)
     .add(10);
 console.log(res);
+
+*/
